@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://kkjxdittk15m"]
+
+[ext_resource type="Texture2D" uid="uid://weam7kc7vnil" path="res://Sprites/nippa square.png" id="1_my7jo"]
+[ext_resource type="Script" uid="uid://bueufsvaeyqx7" path="res://Enemies/nippa_obstacle.gd" id="1_sbyks"]
+[ext_resource type="Script" uid="uid://cdx7njps2ludf" path="res://hitboxes/hurtbox.gd" id="3_ykipu"]
+[ext_resource type="Script" uid="uid://b2y1hs7x1hl5c" path="res://hitboxes/hitbox.gd" id="4_gr4fk"]
+
+[node name="Nippa_Obstacle" type="RigidBody2D" unique_id=913952356]
+mass = 305.545
+center_of_mass_mode = 1
+script = ExtResource("1_sbyks")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1981628149]
+position = Vector2(1.5000076, -1.2000122)
+scale = Vector2(0.12499997, 0.1250001)
+texture = ExtResource("1_my7jo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1410208542]
+position = Vector2(101.5, -137.2)
+polygon = PackedVector2Array(-120, 157, -120.5, 158.2, -77.5, 158.2, -82, 143, -86, 120, -97, 114, -109, 114, -119, 122, -122, 130, -122, 134, -118, 135, -118, 146)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=486029336]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("3_ykipu")
+metadata/_custom_type_script = "uid://cdx7njps2ludf"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hurtbox" unique_id=464522699]
+polygon = PackedVector2Array(-19, -14, 17, -14, 16, -19, 7, -24, -9, -24, -19, -16)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=939188818]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("4_gr4fk")
+metadata/_custom_type_script = "uid://b2y1hs7x1hl5c"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox" unique_id=609833621]
+position = Vector2(101.5, -137.2)
+polygon = PackedVector2Array(-121.5, 156.2, -122.5, 158.2, -75.5, 158.2, -80.5, 143.2, -83.5, 124.2, -95.5, 124.2, -110.5, 124.2, -122.5, 124.2, -124.5, 129.2, -123.5, 134.2, -119.5, 136.2, -119.5, 146.2)

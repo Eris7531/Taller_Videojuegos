@@ -1,0 +1,93 @@
+[gd_scene format=4 uid="uid://dsswmu3lcrx53"]
+
+[ext_resource type="Texture2D" uid="uid://da2vg27hk1ip8" path="res://Tilemaps_v2/Tilemaps/Png Files/wood_moss_alt_tileset_0.png" id="1_4ubfd"]
+[ext_resource type="Script" uid="uid://bip01824k45k1" path="res://Stage.gd" id="1_gsjio"]
+[ext_resource type="PackedScene" uid="uid://nipyus80v17n" path="res://Character.tscn" id="3_mwpjy"]
+[ext_resource type="PackedScene" uid="uid://kkjxdittk15m" path="res://Re-usable_Objects/nippa_obstacle.tscn" id="4_gsj67"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gsjio"]
+texture = ExtResource("1_4ubfd")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+5:1/0 = 0
+6:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mwpjy"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_gsjio")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwpjy"]
+size = Vector2(20.5, 576)
+
+[node name="Stage" type="Node2D" unique_id=784293730]
+position = Vector2(353, 471)
+script = ExtResource("1_gsjio")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=84507970]
+tile_map_data = PackedByteArray("AADq/woAAAAAAAAAAADr/woAAAABAAAAAADs/woAAAACAAAAAADt/woAAAADAAAAAADu/woAAAAAAAAAAADv/woAAAABAAAAAADw/woAAAACAAAAAADx/woAAAADAAAAAADy/woAAAAAAAAAAADz/woAAAABAAAAAAD0/woAAAACAAAAAAD1/woAAAADAAAAAAD2/woAAAAAAAAAAAD3/woAAAABAAAAAAD4/woAAAACAAAAAAD5/woAAAADAAAAAAD6/woAAAAAAAAAAAD7/woAAAABAAAAAAD8/woAAAACAAAAAAD9/woAAAADAAAAAAD+/woAAAAAAAAAAAD//woAAAABAAAAAAAAAAoAAAACAAAAAAABAAoAAAADAAAAAAACAAoAAAAAAAAAAAADAAoAAAABAAAAAAAEAAoAAAACAAAAAAAFAAoAAAADAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAABAAAAAAAIAAoAAAACAAAAAAAJAAoAAAADAAAAAAAKAAoAAAAAAAAAAAALAAoAAAABAAAAAAAMAAoAAAACAAAAAAANAAoAAAADAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAABAAAAAAAQAAoAAAACAAAAAAARAAoAAAADAAAAAAASAAoAAAAAAAAAAAATAAoAAAABAAAAAAAUAAoAAAACAAAAAAAVAAoAAAADAAAAAAAWAAoAAAAAAAAAAAAXAAoAAAABAAAAAAAYAAoAAAACAAAAAAAZAAoAAAADAAAAAAAaAAoAAAAAAAAAAAAbAAoAAAABAAAAAAAcAAoAAAACAAAAAAAdAAoAAAADAAAAAAAeAAoAAAAAAAAAAAAfAAoAAAABAAAAAAAgAAoAAAACAAAAAAAhAAoAAAADAAAAAAAiAAoAAAAAAAAAAAAjAAoAAAABAAAAAAAkAAoAAAACAAAAAAAlAAoAAAADAAAAAAAmAAoAAAAAAAAAAAAnAAoAAAABAAAAAAAoAAoAAAACAAAAAAApAAoAAAADAAAAAAAqAAoAAAAAAAAAAAArAAoAAAABAAAAAAAsAAoAAAACAAAAAAAtAAoAAAADAAAAAAAuAAoAAAAAAAAAAAAvAAoAAAABAAAAAAAwAAoAAAACAAAAAAAxAAoAAAADAAAAAAA=")
+tile_set = SubResource("TileSet_mwpjy")
+
+[node name="Character" parent="." unique_id=1104586617 instance=ExtResource("3_mwpjy")]
+position = Vector2(131, 144)
+
+[node name="Wall_1" type="RigidBody2D" parent="." unique_id=948373321]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_1" unique_id=816217624 groups=["Wall"]]
+position = Vector2(-366, -109)
+shape = SubResource("RectangleShape2D_mwpjy")
+
+[node name="Wall_2" type="RigidBody2D" parent="." unique_id=1376895023]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_2" unique_id=1569329525 groups=["Wall"]]
+position = Vector2(812, -109)
+shape = SubResource("RectangleShape2D_mwpjy")
+
+[node name="Nippa_Obstacle" parent="." unique_id=913952356 instance=ExtResource("4_gsj67")]
+position = Vector2(-92, 138)
+
+[node name="Nippa_Obstacle2" parent="." unique_id=548424851 instance=ExtResource("4_gsj67")]
+position = Vector2(-184, 139)
+
+[node name="Nippa_Obstacle3" parent="." unique_id=543062598 instance=ExtResource("4_gsj67")]
+position = Vector2(-267, 138)

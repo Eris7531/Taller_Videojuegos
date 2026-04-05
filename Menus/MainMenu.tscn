@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cqo8pnrwe4fm3"]
+
+[ext_resource type="Script" uid="uid://bg33t3ivs25sn" path="res://Menus/main_menu.gd" id="1_3g7qx"]
+[ext_resource type="AudioStream" uid="uid://bx5rkqgoibse6" path="res://SFW-BGM/8bitOST.mp3" id="2_r8dbq"]
+
+[sub_resource type="Theme" id="Theme_r8dbq"]
+default_font_size = 12
+
+[node name="Menu" type="Control" unique_id=1017653746]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3g7qx")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2007108270]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1571916827]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_r8dbq")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=517560737]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=115481597]
+layout_mode = 2
+text = "Main Menu"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1493209557]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start Game"
+
+[node name="Continue" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=519770097]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continue Game"
+
+[node name="Options" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1520217761]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options"
+
+[node name="Credits" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=738199270]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1104390339]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit Game"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2009442621]
+stream = ExtResource("2_r8dbq")
+volume_db = -20.0
+autoplay = true
+parameters/looping = true
